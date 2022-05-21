@@ -40,6 +40,15 @@ pip install -r requirements.txt
   
 ## How to run
 
+First, define the file directory by changing `file_location` variable inside the parser.py file under application folder.
+  
+Currently:   
+>file_location = 'C:/Users/kurum/Desktop/Clarity_Code_Challenge/'
+
+Please change the directory of your file to make it work.
+
+----
+  
 We can run the program from the terminal inside the correct project the directory by running: 
 ```bash
 $ python main.py
