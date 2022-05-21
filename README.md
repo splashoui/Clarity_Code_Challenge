@@ -120,7 +120,7 @@ In the case that there is not any connections found during last hour, it prints 
 **There is no any host connected to the host "host_name" during the last hour.**
   
 
-#### Note1: 
+#### Note: 
 
 You can change the file_path variable in order to work with another input file.
 
@@ -150,16 +150,15 @@ I could not make it work the following task:
 >The tool should both parse previously written log files and terminate or collect input from a new log file while it's being written and run indefinitely.
   
 My unlimited_parser program just defines the current time and an hour ago and filters the connections realized to and by the given host name.
-I really want to make it so it can collect input from a new log file while it's being written, I have to do more research on how to do it without any external libraries. 
-  
+
 I should have tested the program better and smarter for more edge cases.
 I should have built the unlimited parser correctly.
  
 ### Personal note:
-
-I believe that I have never experienced working on a real project which must to be built carefully based on fully and well structured, tested for edge cases, the code easy to extend or maintain, performs well.
   
-I have tried my best to create this project. I have tried to build the project well structured as much as possible I could.  
+I have to admit that it has been a challenging task for me. I believe that I have never experienced a real project which must be built carefully for the important points makes the project fully and well structured, tested for edge cases, the code easy to extend or maintain, and performs well. 
+  
+Even though I believe that I can do better work in the future, I have tried my best to create this project for now. I have tried to build the project well structured as much as possible I could. Most importantly, I have learned a lot during building this project.
 
 I clearly understand the points these points:    
   
@@ -167,3 +166,4 @@ I clearly understand the points these points:
   
 2. Would it be easy to maintain and comprehend? Will I be able to understand the code 2 years in the future, when I may no longer be doing Python or programming at all? This generally comes in the form of documenting my code so that others understand why I did x or what x does. Docstrings and comments are two good ways to document code which I have tried to explain most of the steps in my codes and tried to use Docstrings for my methods under the classes.
 
+Thank you.
