@@ -4,11 +4,10 @@ import os
 
 from application.parser import ParserHostConnection
 
-
 file_path = 'input_file/input-file-10000.txt'
 
 class Test(unittest.TestCase):
-
+    # Test 1
     def test_output_normal_parser(self):
 
         """
@@ -30,7 +29,7 @@ class Test(unittest.TestCase):
         # Test that first and second are equal. If the values do not compare equal, the test will fail.
         self.assertEqual(list(result), result_expected)
 
-
+    # Test 2
     def test_host_name_all_lower_letters(self):
 
         """
@@ -51,8 +50,8 @@ class Test(unittest.TestCase):
 
         # Test that first and second are equal. If the values do not compare equal, the test will fail.
         self.assertEqual(list(result), result_expected)
-
-
+    
+    # Test 3
     def test_host_name_all_capital_letters(self):
 
         """
@@ -73,7 +72,8 @@ class Test(unittest.TestCase):
 
         # Test that first and second are equal. If the values do not compare equal, the test will fail.
         self.assertEqual(list(result), result_expected)
-
+    
+    # Test 4
     def test_log_file(self):
 
         """
@@ -86,13 +86,14 @@ class Test(unittest.TestCase):
 
         test = ParserHostConnection(file_path, init_time, end_time, host_name)
         output = test.run_store_in_logs()
+        
         # Test that if the log file log has been created correctly with correct name under the correct directory.
-
         folder_name = 'logs/parsed_host_list_files'
         final_name = folder_name+'/'+str(init_time)+'_'+str(end_time)+'_'+host_name+'.txt'
         result = path.exists(final_name)
         self.assertTrue(result)
-
+        
+    # Test 5
     def test_error_log_file(self):
 
         """
@@ -109,14 +110,14 @@ class Test(unittest.TestCase):
 
         test = ParserHostConnection(file_path, init_time, end_time, host_name)
         output = test.run_store_in_logs()
+        
         # Test that if the ERROR log file log has been created correctly with correct name under the correct directory.
-
         folder_name_error = 'logs/error_logs'
         final_path_error = folder_name_error+'/'+'failed_'+str(init_time)+'_'+str(end_time)+'_'+host_name+'.txt'
         result = path.exists(final_path_error)
         self.assertTrue(result)
 
-
+    # Test 6
     def test_information_stored(self):
         
         """
@@ -137,7 +138,6 @@ class Test(unittest.TestCase):
         # To check if the file is empty or stored with information
         file_size = os.stat(final_name).st_size != 0
         self.assertTrue(file_size)
-
 
 if __name__ == '__main__':
     # begin the unittest.main()
