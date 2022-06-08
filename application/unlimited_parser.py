@@ -1,18 +1,14 @@
 # Import of Libraries and Inherited classes
-
 import datetime
 from application.parser import ParserHostConnection
-
 
 # Defining the file path to read the input text file.
 file_path = 'input_file/input-file-10000.txt'
 
 # Program
-
 class UnlimitedParserHostConnection(object):
     
     """
-    
     Uses the self.host_name input which has been taken from the user in MainProgram() class 
     In order to:
     
@@ -48,13 +44,13 @@ class UnlimitedParserHostConnection(object):
         in order to output a list of hostnames received connection from a given host during the last hour.
         
         """   
-
+        
         inherit = ParserHostConnection(file_path, init_time, end_time, self.host_name)
         return inherit.create_list_of_hosts_from_connected()
 
     def last_one_hour_parse(self):
         # Unix Time stamp in milliseconds
-        # Creating variables for current time and an hour ago.
+        # Variables for current time and an hour ago
         end_time = int(datetime.datetime.timestamp(datetime.datetime.now())*1000)
         init_time = end_time - 3600000  # 3600000 milliseconds : 1 hour
         
