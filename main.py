@@ -1,9 +1,7 @@
 # Import of Libraries and Inherited classes
-
 import datetime
 from application.parser import ParserHostConnection
 from application.unlimited_parser import UnlimitedParserHostConnection
-
 
 # Defining the file path to read the input text file.
 file_path = 'input_file/input-file-10000.txt'
@@ -59,7 +57,7 @@ class MainProgram(object):
         # Normal parser to request inputs from the user.
         elif option == 1: 
 
-            # .strip() being used in case that user leaves space in the input
+            # .strip() being used in the case that user leaves space in the input
             init_time = input('Enter a 13 digits timestamp format initial time: ').strip()
             while not init_time or not init_time.isdigit():
                 init_time = input('Incorrect init_datetime (Please try again): ')
@@ -77,10 +75,10 @@ class MainProgram(object):
             
             # It capitalize the first letter and lower the rest of them.
             # Since our input host_names are first letter capital and rest lower,
-            # I wanted to fix the user input in case user inputs the host name all lower or all capital.
-            host_name =host_name.capitalize()
-
-            self.init_time= int(init_time)
+            # To fix the user input in the case user inputs the host name all lower or all capital.
+            host_name = host_name.capitalize()
+            
+            self.init_time = int(init_time)
             self.end_time = int(end_time)
             self.host_name = host_name
             
@@ -89,10 +87,10 @@ class MainProgram(object):
         
         # Unlimited parser to request the host name from the user.    
         if option == 2: 
-            
             host_name = input('Enter a hostname: ')
             while not host_name or len(host_name) < 1 or host_name.isdigit():
                 host_name = input('Incorrect hostname (Please try again): ').strip()
+                
             # Assigning this input to self variable 
             #to be able to use host_name inside the UnlimitedParserHostConnection class and its methods.
             self.host_name = host_name
